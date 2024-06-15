@@ -12,7 +12,7 @@ const { data: navigation } = await useAsyncData('navigation', () => fetchContent
           v-for="item in navigation"
           :key="item._path"
           :to="item._path"
-          class="text-gray-700 hover:text-gray-900"
+          class="text-zinc-700 hover:text-zinc-900"
         >
           {{ item.title }}
         </NuxtLink>
