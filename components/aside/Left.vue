@@ -7,7 +7,7 @@ const links = data.value?.body?.toc?.links ?? [];
 </script>
 
 <template>
-  <aside class="group z-10 text-sm lg:col-span-3">
+  <aside class="group z-10 text-sm sm:col-span-2 lg:col-span-3">
     <div class="fixed hidden space-y-2 lg:block">
       <Icon
         name="ph:list-dashes"

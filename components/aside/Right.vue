@@ -12,7 +12,7 @@ async function navigateToTop() {
 </script>
 
 <template>
-  <aside class="z-10 lg:col-span-3">
+  <aside class="z-10 sm:col-span-2 lg:col-span-3">
     <ClientOnly>
       <button
         class="fixed bottom-2 right-2 rounded-full p-2 transition-opacity duration-500 hover:bg-zinc-300/20 lg:bottom-6 lg:right-8"
