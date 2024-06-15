@@ -5,3 +5,14 @@
 ::selection {
   @apply bg-zinc-200;
 }
+
+* :not(code, pre, .line, .line > span) {
+  font-family: 'Geist', Inter, sans-serif;
+}
+
+code,
+pre,
+.line,
+.line > span {
+  font-family: 'JetBrains Mono', monospace;
+}

@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['@nuxtjs/tailwindcss', '@nuxt/eslint', '@nuxt/content', '@vueuse/nuxt', 'nuxt-icon'],
+  modules: ['@nuxtjs/tailwindcss', '@nuxt/eslint', '@nuxt/content', '@vueuse/nuxt', 'nuxt-icon', '@nuxt/fonts'],
   devtools: { enabled: false },
   content: {
     highlight: {
