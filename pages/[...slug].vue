@@ -5,7 +5,7 @@ definePageMeta({
 </script>
 
 <template>
-  <main class="prose prose-zinc col-span-6 lg:prose-lg prose-pre:bg-zinc-100">
+  <main class="prose prose-zinc col-span-6 pt-12 lg:prose-lg prose-pre:bg-zinc-100">
     <ContentDoc />
   </main>
 </template>
