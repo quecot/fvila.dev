@@ -12,4 +12,5 @@ export default defineNuxtConfig({
       routes: ['/sitemap.xml'],
     },
   },
+  css: ['~/assets/css/main.css'],
 });

@@ -8,7 +8,7 @@ const dir = navDirFromPath(route.path, navigation.value ?? []);
 
 <template>
   <nav class="flex items-center space-x-2">
-    <NuxtLink v-for="item in dir" :key="item.id" :to="item._path" class="text-blue-700 hover:underline">
+    <NuxtLink v-for="item in dir" :key="item.id" :to="item._path" external class="text-blue-700 hover:underline">
       {{ item.title }}
     </NuxtLink>
   </nav>
