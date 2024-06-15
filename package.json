@@ -14,8 +14,10 @@
     "format:fix": "prettier --write ."
   },
   "dependencies": {
+    "@nuxt/content": "2.12.1",
     "nuxt": "3.12.1",
-    "vue": "3.4.27",
+    "sitemap": "8.0.0",
+    "vue": "3.4.29",
     "vue-router": "4.3.3"
   },
   "devDependencies": {
