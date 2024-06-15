@@ -12,10 +12,10 @@ async function navigateToTop() {
 </script>
 
 <template>
-  <aside class="col-span-3">
+  <aside class="z-10 lg:col-span-3">
     <ClientOnly>
       <button
-        class="fixed bottom-6 right-8 rounded-full p-2 transition-opacity duration-500 hover:bg-zinc-300/20"
+        class="fixed bottom-2 right-2 rounded-full p-2 transition-opacity duration-500 hover:bg-zinc-300/20 lg:bottom-6 lg:right-8"
         :class="y > SCROLL_TO_TOP_OFFSET ? 'opacity-100' : 'cursor-default opacity-0'"
         @click="navigateToTop"
       >

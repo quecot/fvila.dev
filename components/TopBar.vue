@@ -3,7 +3,7 @@ const { data: navigation } = await useAsyncData('navigation', () => fetchContent
 </script>
 
 <template>
-  <header class="sticky top-0 z-50 px-8 py-6">
+  <header class="sticky top-0 z-50 px-4 py-3 lg:px-8 lg:py-6">
     <nav class="flex items-center justify-between">
       <NuxtLink to="/">Home</NuxtLink>
 
