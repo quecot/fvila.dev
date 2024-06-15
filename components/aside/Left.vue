@@ -7,12 +7,12 @@ const links = data.value?.body?.toc?.links ?? [];
 </script>
 
 <template>
-  <aside class="group col-span-3">
+  <aside class="group col-span-3 text-sm">
     <div class="fixed space-y-2">
       <Icon
         name="ph:list-dashes"
         size="24"
-        class="text-zinc-900 opacity-60 transition-opacity duration-500 group-hover:opacity-100"
+        class="text-zinc-900 opacity-30 transition-opacity duration-500 group-hover:opacity-100"
       />
 
       <ul class="opacity-0 transition-opacity duration-500 group-hover:opacity-100">
