@@ -1,14 +1,18 @@
 <script setup lang="ts">
+const SCROLL_TO_TOP_OFFSET = 100;
+
 const route = useRoute();
 
+const { y } = useWindowScroll();
+
 async function navigateToTop() {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  y.value = 0;
   await navigateTo(route.path);
 }
 </script>
 
 <template>
   <aside class="col-span-3">
-    <button class="fixed bottom-6 right-8" @click="navigateToTop">Go to top</button>
+    <button v-show="y > SCROLL_TO_TOP_OFFSET" class="fixed bottom-6 right-8" @click="navigateToTop">Go to top</button>
   </aside>
 </template>
