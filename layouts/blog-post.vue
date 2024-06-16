@@ -6,4 +6,6 @@
     <slot />
     <AsideRight />
   </div>
+
+  <BackgroundWiggle />
 </template>
