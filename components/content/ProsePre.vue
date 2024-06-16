@@ -44,7 +44,7 @@ function copy() {
     ><slot /></pre>
     <span class="absolute right-3 top-2 text-sm group-hover:hidden">{{ $props.language }}</span>
     <button
-      class="absolute right-2 top-2 hidden rounded-md px-1 pb-1 text-sm hover:bg-gray-200 group-hover:block"
+      class="absolute right-2 top-2 hidden rounded-md px-1 pb-1 text-sm hover:bg-gray-200 group-hover:block hover:dark:bg-gray-700"
       @click="copy()"
     >
       <Icon v-if="copied" name="ph:check" size="16" />
