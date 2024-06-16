@@ -19,7 +19,7 @@ async function navigateToTop() {
         :class="y > SCROLL_TO_TOP_OFFSET ? 'opacity-100' : 'cursor-default opacity-0'"
         @click="navigateToTop"
       >
-        <Icon name="ph:arrow-fat-line-up" size="24" />
+        <Icon name="ph:arrow-fat-line-up" size="24" class="text-zinc-700 hover:text-zinc-900" />
       </button>
     </ClientOnly>
   </aside>

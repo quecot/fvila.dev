@@ -5,7 +5,7 @@ const { data: navigation } = await useAsyncData('navigation', () => fetchContent
 <template>
   <header class="top-0 z-50 px-4 py-3 sm:sticky lg:px-8 lg:py-6">
     <nav class="flex items-center justify-between">
-      <NuxtLink to="/">Home</NuxtLink>
+      <NuxtLink to="/" class="text-zinc-700 hover:text-zinc-900">Home</NuxtLink>
 
       <div class="flex items-center justify-between space-x-4">
         <NuxtLink
