@@ -14,19 +14,30 @@ const readingTime = data.value?.readingTime.text;
   <main
     :class="[
       'dark:prose-invert',
-      'sm:col-span-8 lg:col-span-6 lg:pt-12',
+      'pb-12 sm:col-span-8 lg:col-span-6 lg:pt-12',
       'prose prose-zinc col-span-12 pt-4 prose-h1:mb-0',
       'prose-pre:bg-zinc-100 dark:prose-pre:bg-zinc-800',
       'prose-pre:rounded-md prose-pre:transition-colors prose-pre:duration-500',
       'prose-code:bg-zinc-100 dark:prose-code:bg-zinc-800',
       'prose-code:rounded-md prose-code:transition-colors prose-code:duration-500',
+      'prose-a:decoration-zinc-400 prose-a:underline-offset-4 dark:prose-a:decoration-zinc-500',
+      'hover:prose-a:decoration-zinc-500 dark:hover:prose-a:decoration-zinc-400',
+      'prose-a:transition-colors prose-a:duration-500',
     ]"
   >
     <ContentDoc />
+    <button class="group flex items-center space-x-2 pt-4" @click="navigateTo('/blog')">
+      <Icon name="ph:arrow-left" />
+      <span
+        class="text-zinc-950 decoration-zinc-500 underline-offset-4 group-hover:underline dark:text-zinc-50 dark:decoration-zinc-400"
+      >
+        Back to <code class="px-1 before:hidden after:hidden">{{ route.path.split('/').slice(0, -1).join('/') }}</code>
+      </span>
+    </button>
   </main>
 
   <ClientOnly>
-    <Teleport to="#subheader"> - {{ readingTime }}</Teleport>
+    <Teleport to="#subheader"> · {{ readingTime }}</Teleport>
   </ClientOnly>
 </template>
 
