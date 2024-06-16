@@ -4,7 +4,7 @@ const { data: navigation } = await useAsyncData('navigation', () => fetchContent
 const mode = useColorMode();
 
 function toggleMode() {
-  const newMode = mode.value === 'light' ? 'dark' : mode.value === 'dark' ? 'light' : 'system';
+  const newMode = mode.value === 'light' ? 'dark' : 'light';
   mode.value = newMode;
 }
 </script>
