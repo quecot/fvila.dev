@@ -5,6 +5,12 @@ definePageMeta({
 
 const route = useRoute();
 const { data: articles } = await useAsyncData('blog', () => queryContent(route.path).find());
+
+function isOlderThanAWeek(dateAsString: string) {
+  const date = new Date(dateAsString);
+  date.setDate(date.getDate() + 7);
+  return date < new Date();
+}
 </script>
 
 <template>
@@ -15,7 +21,7 @@ const { data: articles } = await useAsyncData('blog', () => queryContent(route.p
         :key="article.id"
         :to="article._path"
         external
-        class="group space-x-2 text-balance"
+        class="group relative space-x-2 text-balance"
       >
         <span
           class="text-zinc-600 transition-colors duration-500 group-hover:text-zinc-950 dark:text-zinc-200 dark:group-hover:text-zinc-50"
@@ -28,6 +34,8 @@ const { data: articles } = await useAsyncData('blog', () => queryContent(route.p
         >
           {{ article.date }} · {{ article.readingTime.text.replace(' read', '') }}
         </span>
+
+        <Badge v-if="!isOlderThanAWeek(article.date)" label="New" class="-left-16 top-0.5 sm:absolute" />
       </NuxtLink>
     </nav>
   </main>
