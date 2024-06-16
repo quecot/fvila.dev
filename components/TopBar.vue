@@ -4,8 +4,8 @@ const { data: navigation } = await useAsyncData('navigation', () => fetchContent
 const mode = useColorMode();
 
 function toggleMode() {
-  const newMode = mode.value === 'light' ? 'dark' : 'light';
-  mode.value = newMode;
+  const newMode = mode.preference === 'light' ? 'dark' : mode.preference === 'dark' ? 'system' : 'light';
+  mode.preference = newMode;
 }
 </script>
 
@@ -26,13 +26,21 @@ function toggleMode() {
           {{ item.title }}
         </NuxtLink>
 
-        <button class="pb-1" @click="toggleMode">
-          <Icon
-            :name="mode.value === 'light' ? 'ph:sun' : mode.value === 'dark' ? 'ph:moon' : 'ph:monitor'"
-            size="20"
-            class="text-zinc-700 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-300"
-          />
-        </button>
+        <ClientOnly>
+          <button class="pb-1" @click="toggleMode">
+            <Icon
+              :name="mode.preference === 'light' ? 'ph:sun' : mode.preference === 'dark' ? 'ph:moon' : 'ph:monitor'"
+              size="20"
+              class="text-zinc-700 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-300"
+            />
+          </button>
+
+          <template #fallback>
+            <div class="pb-1">
+              <Icon name="ph:monitor" size="20" class="text-zinc-700 dark:text-zinc-400" />
+            </div>
+          </template>
+        </ClientOnly>
       </div>
     </nav>
   </header>
