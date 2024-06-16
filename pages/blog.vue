@@ -1,17 +1,36 @@
 <script setup lang="ts">
-const route = useRoute();
-const { navDirFromPath } = useContentHelpers();
-const { data: navigation } = await useAsyncData('navigation', () => fetchContentNavigation());
+definePageMeta({
+  layout: 'post-list',
+});
 
-const dir = navDirFromPath(route.path, navigation.value ?? []);
+const route = useRoute();
+const { data: articles } = await useAsyncData('blog', () => queryContent(route.path).find());
 </script>
 
 <template>
-  <nav class="flex items-center space-x-2">
-    <NuxtLink v-for="item in dir" :key="item.id" :to="item._path" external class="text-blue-700 hover:underline">
-      {{ item.title }}
-    </NuxtLink>
-  </nav>
+  <main class="col-span-12 col-start-1 pt-4 sm:col-span-8 sm:col-start-2 lg:col-span-6 lg:col-start-3 lg:pt-12">
+    <nav class="flex flex-col space-y-4 text-lg">
+      <NuxtLink
+        v-for="article in articles"
+        :key="article.id"
+        :to="article._path"
+        external
+        class="group space-x-2 text-balance"
+      >
+        <span
+          class="text-zinc-600 transition-colors duration-500 group-hover:text-zinc-950 dark:text-zinc-200 dark:group-hover:text-zinc-50"
+        >
+          {{ article.title }}
+        </span>
 
-  <pre>{{ dir }}</pre>
+        <span
+          class="text-base text-zinc-500 transition-colors duration-500 group-hover:text-zinc-700 dark:text-zinc-400 dark:group-hover:text-zinc-300"
+        >
+          {{ article.date }} · {{ article.readingTime.text.replace(' read', '') }}
+        </span>
+      </NuxtLink>
+    </nav>
+  </main>
+
+  <pre hidden>{{ articles }}</pre>
 </template>
