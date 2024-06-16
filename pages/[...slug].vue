@@ -18,8 +18,6 @@ const readingTime = data.value?.readingTime.text;
       'prose prose-zinc pt-4 prose-h1:mb-0 lg:pt-12',
       'prose-pre:bg-zinc-100 dark:prose-pre:bg-zinc-800',
       'prose-pre:rounded-md prose-pre:transition-colors prose-pre:duration-500',
-      'prose-code:bg-zinc-100 dark:prose-code:bg-zinc-800',
-      'prose-code:rounded-md prose-code:transition-colors prose-code:duration-500',
       'prose-a:decoration-zinc-400 prose-a:underline-offset-4 dark:prose-a:decoration-zinc-500',
       'hover:prose-a:decoration-zinc-500 dark:hover:prose-a:decoration-zinc-400',
       'prose-a:transition-colors prose-a:duration-500',
