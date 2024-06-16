@@ -3,4 +3,5 @@ import typography from '@tailwindcss/typography';
 
 export default <Partial<Config>>{
   plugins: [typography()],
+  darkMode: 'class',
 };

@@ -15,11 +15,15 @@ async function navigateToTop() {
   <aside class="z-10 sm:col-span-2 lg:col-span-3">
     <ClientOnly>
       <button
-        class="fixed bottom-2 right-2 rounded-full p-2 transition-opacity duration-500 hover:bg-zinc-300/20 lg:bottom-6 lg:right-8"
+        class="group fixed bottom-2 right-2 rounded-full p-2 transition-opacity duration-500 hover:bg-zinc-300/20 lg:bottom-6 lg:right-8"
         :class="y > SCROLL_TO_TOP_OFFSET ? 'opacity-100' : 'cursor-default opacity-0'"
         @click="navigateToTop"
       >
-        <Icon name="ph:arrow-fat-line-up" size="24" class="text-zinc-700 hover:text-zinc-900" />
+        <Icon
+          name="ph:arrow-fat-line-up"
+          size="20"
+          class="text-zinc-700 group-hover:text-zinc-900 dark:text-zinc-400 dark:group-hover:text-zinc-300"
+        />
       </button>
     </ClientOnly>
   </aside>

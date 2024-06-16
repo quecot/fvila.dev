@@ -13,10 +13,10 @@ const readingTime = data.value?.readingTime.text;
 <template>
   <main
     :class="[
-      'prose prose-zinc col-span-12 pt-4',
-      'lg:prose-lg prose-pre:bg-zinc-100',
+      'dark:prose-invert',
       'sm:col-span-8 lg:col-span-6 lg:pt-12',
-      'prose-h1:mb-0',
+      'prose prose-zinc col-span-12 pt-4 prose-h1:mb-0',
+      'prose-pre:bg-zinc-100 dark:prose-pre:bg-zinc-800',
     ]"
   >
     <ContentDoc />
@@ -33,6 +33,6 @@ span[emptylineplaceholder] {
 }
 
 header > p {
-  @apply !mt-1 text-lg text-zinc-600;
+  @apply !mt-1 text-lg text-zinc-600 dark:text-zinc-400;
 }
 </style>

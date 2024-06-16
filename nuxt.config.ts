@@ -1,6 +1,17 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['@nuxtjs/tailwindcss', '@nuxt/eslint', '@nuxt/content', '@vueuse/nuxt', 'nuxt-icon', '@nuxt/fonts'],
+  modules: [
+    'nuxt-icon',
+    '@nuxt/fonts',
+    '@nuxt/eslint',
+    '@vueuse/nuxt',
+    '@nuxt/content',
+    '@nuxtjs/color-mode',
+    '@nuxtjs/tailwindcss',
+  ],
+  colorMode: {
+    classSuffix: '',
+  },
   devtools: { enabled: false },
   content: {
     markdown: {
