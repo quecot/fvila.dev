@@ -14,8 +14,8 @@ const readingTime = data.value?.readingTime.text;
   <main
     :class="[
       'dark:prose-invert',
-      'pb-12 sm:col-span-8 lg:col-span-6 lg:pt-12',
-      'prose prose-zinc col-span-12 pt-4 prose-h1:mb-0',
+      'col-span-12 pb-12 sm:col-span-8 lg:col-span-6',
+      'prose prose-zinc pt-4 prose-h1:mb-0 lg:pt-12',
       'prose-pre:bg-zinc-100 dark:prose-pre:bg-zinc-800',
       'prose-pre:rounded-md prose-pre:transition-colors prose-pre:duration-500',
       'prose-code:bg-zinc-100 dark:prose-code:bg-zinc-800',
