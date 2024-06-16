@@ -42,9 +42,15 @@ function copy() {
       :class="$props.class"
       class="rounded-md bg-zinc-100 py-5 transition-colors duration-500 dark:bg-zinc-800"
     ><slot /></pre>
-    <span class="absolute right-3 top-2 text-sm group-hover:hidden">{{ $props.language }}</span>
+
+    <span class="absolute right-3 top-2 text-sm group-hover:hidden" :class="copied && 'hidden'">
+      {{ $props.language }}
+    </span>
+
     <button
       class="absolute right-2 top-2 hidden rounded-md px-1 pb-1 text-sm hover:bg-gray-200 group-hover:block hover:dark:bg-gray-700"
+      :class="copied && '!block'"
+      :disabled="copied"
       @click="copy()"
     >
       <Icon v-if="copied" name="ph:check" size="16" />
