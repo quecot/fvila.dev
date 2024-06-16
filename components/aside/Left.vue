@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const route = useRoute();
 
-const { data } = await useAsyncData(() => queryContent(route.path).findOne());
+const { data } = await useAsyncData('post', () => queryContent(route.path).findOne());
 
 const links = data.value?.body?.toc?.links ?? [];
 </script>

@@ -19,6 +19,7 @@
     "@vueuse/core": "10.11.0",
     "@vueuse/nuxt": "10.11.0",
     "nuxt": "3.12.1",
+    "remark-reading-time": "2.0.1",
     "sitemap": "8.0.0",
     "vue": "3.4.29",
     "vue-router": "4.3.3"
