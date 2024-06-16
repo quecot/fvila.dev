@@ -17,6 +17,9 @@ const readingTime = data.value?.readingTime.text;
       'sm:col-span-8 lg:col-span-6 lg:pt-12',
       'prose prose-zinc col-span-12 pt-4 prose-h1:mb-0',
       'prose-pre:bg-zinc-100 dark:prose-pre:bg-zinc-800',
+      'prose-pre:rounded-md prose-pre:transition-colors prose-pre:duration-500',
+      'prose-code:bg-zinc-100 dark:prose-code:bg-zinc-800',
+      'prose-code:rounded-md prose-code:transition-colors prose-code:duration-500',
     ]"
   >
     <ContentDoc />
