@@ -40,7 +40,7 @@ function copy() {
   <div class="group relative">
     <pre
       :class="$props.class"
-      class="rounded-md bg-zinc-100 py-5 transition-colors duration-500 dark:bg-zinc-800"
+      class="rounded-md bg-zinc-100 transition-colors duration-500 dark:bg-zinc-800"
     ><slot /></pre>
 
     <span class="absolute right-3 top-2 text-sm group-hover:hidden" :class="copied && 'hidden'">
