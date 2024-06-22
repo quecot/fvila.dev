@@ -6,13 +6,13 @@ const props = defineProps<{
 
 const { locale } = useLocale();
 
-const format = Intl.DateTimeFormat(locale.value, {
+const region = Intl.DateTimeFormat(locale.value, {
   year: 'numeric',
   month: 'short',
   day: 'numeric',
 });
 
-const formattedDate = computed(() => format.format(new Date(props.date)));
+const formattedDate = computed(() => region.format(new Date(props.date)));
 </script>
 
 <template>
