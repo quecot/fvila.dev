@@ -14,9 +14,9 @@ const readingTime = locale.value === 'en' ? text : text.replace(' read', ' de le
 </script>
 
 <template>
-  <main
+  <div
     :class="[
-      'dark:prose-invert',
+      'dark:prose-invert lg:max-w-none',
       'col-span-12 pb-12 sm:col-span-8 lg:col-span-6',
       'prose prose-zinc pt-4 prose-h1:mb-0 lg:pt-12',
       'prose-pre:bg-zinc-100 dark:prose-pre:bg-zinc-800',
@@ -26,7 +26,10 @@ const readingTime = locale.value === 'en' ? text : text.replace(' read', ' de le
       'prose-a:transition-colors prose-a:duration-500',
     ]"
   >
-    <ContentDoc />
+    <main class="mx-auto max-w-[65ch]">
+      <ContentDoc />
+    </main>
+
     <button class="group flex items-center space-x-2 pt-4" @click="navigateTo(`/blog/${locale}`, { external: true })">
       <Icon name="ph:arrow-left" />
       <span
@@ -43,7 +46,7 @@ const readingTime = locale.value === 'en' ? text : text.replace(' read', ' de le
         Back to <code class="before:hidden after:hidden">/blog</code>
       </span>
     </button>
-  </main>
+  </div>
 
   <ClientOnly>
     <Teleport to="#subheader"> · {{ readingTime }}</Teleport>
