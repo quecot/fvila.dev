@@ -21,14 +21,16 @@ const region = Intl.DateTimeFormat(locale.value, {
 </script>
 
 <template>
-  <main class="col-span-12 col-start-1 mx-auto pt-4 sm:col-span-8 sm:col-start-2 lg:col-span-6 lg:col-start-3 lg:pt-12">
-    <nav class="flex flex-col space-y-4 text-lg">
+  <main
+    class="col-span-12 col-start-1 mx-auto max-w-none pt-4 sm:col-span-8 sm:col-start-3 lg:col-span-6 lg:col-start-4 lg:pt-12"
+  >
+    <nav class="flex flex-col items-center space-y-4 text-lg">
       <NuxtLink
         v-for="article in articles"
         :key="article.id"
         :to="article._path"
         external
-        class="group relative space-x-2 text-balance"
+        class="group relative space-x-2 text-pretty md:text-center"
       >
         <span
           class="text-zinc-600 transition-colors duration-500 group-hover:text-zinc-950 dark:text-zinc-200 dark:group-hover:text-zinc-50"
