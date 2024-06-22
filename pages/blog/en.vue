@@ -11,6 +11,13 @@ function isOlderThanAWeek(dateAsString: string) {
   date.setDate(date.getDate() + 7);
   return date < new Date();
 }
+
+const { locale } = useLocale();
+
+const region = Intl.DateTimeFormat(locale.value, {
+  month: 'short',
+  day: 'numeric',
+});
 </script>
 
 <template>
@@ -32,13 +39,11 @@ function isOlderThanAWeek(dateAsString: string) {
         <span
           class="text-base text-zinc-500 transition-colors duration-500 group-hover:text-zinc-700 dark:text-zinc-400 dark:group-hover:text-zinc-300"
         >
-          {{ article.date }} · {{ article.readingTime.text.replace(' read', '') }}
+          {{ region.format(new Date(article.date)) }} · {{ article.readingTime.text.replace(' read', '') }}
         </span>
 
         <Badge v-if="!isOlderThanAWeek(article.date)" label="New" class="-left-16 top-0.5 sm:absolute" />
       </NuxtLink>
     </nav>
   </main>
-
-  <pre hidden>{{ articles }}</pre>
 </template>
