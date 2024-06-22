@@ -19,8 +19,6 @@ const readingTime = locale.value === 'en' ? text : text.replace(' read', ' de le
       'dark:prose-invert lg:max-w-none',
       'col-span-12 pb-12 sm:col-span-8 lg:col-span-6',
       'prose prose-zinc pt-4 prose-h1:mb-0 lg:pt-12',
-      'prose-pre:bg-zinc-100 dark:prose-pre:bg-zinc-800',
-      'prose-pre:rounded-md prose-pre:transition-colors prose-pre:duration-500',
       'prose-a:decoration-zinc-400 prose-a:underline-offset-4 dark:prose-a:decoration-zinc-500',
       'hover:prose-a:decoration-zinc-500 dark:hover:prose-a:decoration-zinc-400',
       'prose-a:transition-colors prose-a:duration-500',
