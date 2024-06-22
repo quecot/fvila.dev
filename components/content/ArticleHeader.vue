@@ -4,13 +4,9 @@ const props = defineProps<{
   date: string;
 }>();
 
-const route = useRoute();
+const { locale } = useLocale();
 
-// TODO: create composable to get the current locale
-const isSpanish = route.path.includes('/es/');
-const isEnglish = route.path.includes('/en/');
-
-const format = Intl.DateTimeFormat(isSpanish ? 'es' : isEnglish ? 'en' : 'en', {
+const format = Intl.DateTimeFormat(locale.value, {
   year: 'numeric',
   month: 'short',
   day: 'numeric',
