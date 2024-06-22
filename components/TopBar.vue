@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const { data: navigation } = await useAsyncData('navigation', () => fetchContentNavigation());
 
+const { locale } = useLocale();
 const mode = useColorMode();
 
 function toggleMode() {
@@ -12,19 +13,24 @@ function toggleMode() {
 <template>
   <header class="top-0 z-50 px-4 py-3 sm:sticky lg:px-8 lg:py-6">
     <nav class="flex items-center justify-between">
-      <NuxtLink to="/" class="text-zinc-700 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-300">
-        Home
+      <NuxtLink
+        :to="`/${locale}`"
+        class="text-zinc-700 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-300"
+      >
+        {{ locale === 'es' ? 'Inicio' : 'Home' }}
       </NuxtLink>
 
       <div class="flex items-center justify-between space-x-4">
         <NuxtLink
           v-for="item in navigation"
-          :key="item._path"
-          :to="item._path"
+          :key="`${item._path}/${locale}`"
+          :to="`${item._path}/${locale}`"
           class="text-zinc-700 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-300"
         >
           {{ item.title }}
         </NuxtLink>
+
+        <LocaleSwitcher />
 
         <ClientOnly>
           <button class="pb-1" @click="toggleMode">

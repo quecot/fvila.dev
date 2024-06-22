@@ -10,6 +10,9 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@nuxthq/studio',
   ],
+  routeRules: {
+    '/': { redirect: '/en' },
+  },
   colorMode: {
     classSuffix: '',
   },

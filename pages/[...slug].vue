@@ -7,7 +7,10 @@ const route = useRoute();
 
 const { data } = await useAsyncData('post', () => queryContent(route.path).findOne());
 
-const readingTime = data.value?.readingTime.text;
+const { locale } = useLocale();
+
+const text = data.value?.readingTime.text || '1 min read';
+const readingTime = locale.value === 'en' ? text : text.replace(' read', ' de lectura');
 </script>
 
 <template>
@@ -24,12 +27,20 @@ const readingTime = data.value?.readingTime.text;
     ]"
   >
     <ContentDoc />
-    <button class="group flex items-center space-x-2 pt-4" @click="navigateTo('/blog')">
+    <button class="group flex items-center space-x-2 pt-4" @click="navigateTo(`/blog/${locale}`, { external: true })">
       <Icon name="ph:arrow-left" />
       <span
+        v-if="locale === 'es'"
         class="text-zinc-950 decoration-zinc-500 underline-offset-4 group-hover:underline dark:text-zinc-50 dark:decoration-zinc-400"
       >
-        Back to <code class="px-1 before:hidden after:hidden">{{ route.path.split('/').slice(0, -1).join('/') }}</code>
+        Volver a <code class="before:hidden after:hidden">/blog</code>
+      </span>
+
+      <span
+        v-else
+        class="text-zinc-950 decoration-zinc-500 underline-offset-4 group-hover:underline dark:text-zinc-50 dark:decoration-zinc-400"
+      >
+        Back to <code class="before:hidden after:hidden">/blog</code>
       </span>
     </button>
   </main>
