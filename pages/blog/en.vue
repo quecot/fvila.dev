@@ -21,7 +21,7 @@ const region = Intl.DateTimeFormat(locale.value, {
 </script>
 
 <template>
-  <main class="col-span-12 col-start-1 pt-4 sm:col-span-8 sm:col-start-2 lg:col-span-6 lg:col-start-3 lg:pt-12">
+  <main class="col-span-12 col-start-1 mx-auto pt-4 sm:col-span-8 sm:col-start-2 lg:col-span-6 lg:col-start-3 lg:pt-12">
     <nav class="flex flex-col space-y-4 text-lg">
       <NuxtLink
         v-for="article in articles"
