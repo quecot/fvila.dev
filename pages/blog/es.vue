@@ -35,7 +35,7 @@ function isOlderThanAWeek(dateAsString: string) {
           {{ article.date }} · {{ article.readingTime.text.replace(' read', '') }}
         </span>
 
-        <Badge v-if="!isOlderThanAWeek(article.date)" label="New" class="-left-16 top-0.5 sm:absolute" />
+        <Badge v-if="!isOlderThanAWeek(article.date)" label="Nuevo" class="-left-16 top-0.5 sm:absolute" />
       </NuxtLink>
     </nav>
   </main>
