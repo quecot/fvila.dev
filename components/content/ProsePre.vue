@@ -38,10 +38,7 @@ function copy() {
 
 <template>
   <div class="group relative">
-    <pre
-      :class="$props.class"
-      class="rounded-md bg-zinc-100 pl-3.5 transition-colors duration-500 dark:bg-zinc-800"
-    ><slot /></pre>
+    <pre :class="$props.class" class="rounded-md bg-zinc-100 pl-3.5 dark:bg-zinc-800"><slot /></pre>
 
     <span class="absolute right-3 top-2 text-sm group-hover:hidden" :class="copied && 'hidden'">
       {{ $props.language }}
