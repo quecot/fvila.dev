@@ -28,24 +28,24 @@ const readingTime = locale.value === 'en' ? text : text.replace(' read', ' de le
   >
     <main class="mx-auto max-w-[65ch]">
       <ContentDoc />
+
+      <button class="group flex items-center space-x-2 pt-4" @click="navigateTo(`/blog/${locale}`, { external: true })">
+        <Icon name="ph:arrow-left" />
+        <span
+          v-if="locale === 'es'"
+          class="text-zinc-950 decoration-zinc-500 underline-offset-4 group-hover:underline dark:text-zinc-50 dark:decoration-zinc-400"
+        >
+          Volver a <code class="before:hidden after:hidden">/blog</code>
+        </span>
+
+        <span
+          v-else
+          class="text-zinc-950 decoration-zinc-500 underline-offset-4 group-hover:underline dark:text-zinc-50 dark:decoration-zinc-400"
+        >
+          Back to <code class="before:hidden after:hidden">/blog</code>
+        </span>
+      </button>
     </main>
-
-    <button class="group flex items-center space-x-2 pt-4" @click="navigateTo(`/blog/${locale}`, { external: true })">
-      <Icon name="ph:arrow-left" />
-      <span
-        v-if="locale === 'es'"
-        class="text-zinc-950 decoration-zinc-500 underline-offset-4 group-hover:underline dark:text-zinc-50 dark:decoration-zinc-400"
-      >
-        Volver a <code class="before:hidden after:hidden">/blog</code>
-      </span>
-
-      <span
-        v-else
-        class="text-zinc-950 decoration-zinc-500 underline-offset-4 group-hover:underline dark:text-zinc-50 dark:decoration-zinc-400"
-      >
-        Back to <code class="before:hidden after:hidden">/blog</code>
-      </span>
-    </button>
   </div>
 
   <ClientOnly>
